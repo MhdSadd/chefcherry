@@ -530,7 +530,7 @@
 /* - Team Section */
 
 .team-section {
-	background: url("../images/team-bg.jpg") no-repeat center center; 
+	background: url("../../images/team-bg.jpg") no-repeat center center; 
     background-size: cover;
     color: #fff;
 	position: relative;
