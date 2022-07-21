@@ -1,18 +1,18 @@
 
 const indexPage = (req,res) =>{
-    let pageTilte = "Home ";
-    res.render('default/index',{pageTilte});
+    let Title = "Home ";
+    res.render('default/index',{Title});
 
 }
 
 const portfolioPage =(req,res) =>{
-    let pageTilte = "Portfolio";
-    res.render('default/portfolio',{pageTilte});
+    let Title = "Portfolio";
+    res.render('default/portfolio',{Title});
 }
 
 const contactPage = (req,res) => {
-    let pageTilte = "Contact";
-    res.render('default/contact', {pageTilte})
+    let Title = "Contact";
+    res.render('default/contact', {Title})
 }
 
 module.exports = {
