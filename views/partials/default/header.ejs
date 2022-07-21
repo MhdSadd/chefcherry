@@ -10,7 +10,9 @@
   <meta name="description" content="" />
   <meta name="author" content="" />
 
-  <title> <%= Title %> </title>
+  <title>
+    <%= Title %>
+  </title>
 
   <!-- Standard Favicon -->
   <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
@@ -20,7 +22,8 @@
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
 
   <!-- For iPhone 4 Retina display: -->
-  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/images/apple-touch-icon-114x114-precomposed.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="114x114"
+    href="assets/images/apple-touch-icon-114x114-precomposed.png" />
 
   <!-- For iPad: -->
   <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/images/apple-touch-icon-72x72-precomposed.html" />
@@ -100,13 +103,15 @@
           </div>
           <div class="navbarr-collapse collapse navbarr-right" id="navbarr">
             <ul class="nav navbarr-nav menubar">
-              <li class="active"><a href="/">Home</a></li>
-              <li><a href="#about-section" title="About">My Story</a></li>
-              <li>
-                <a href="/portfolio" title="Gallery">Portfolio</a>
+              <li <% if (Title ==='Home' ) { %>class="active" <% }%> >
+                  <a href="/">Home</a>
               </li>
-              <li>
-                <a href="/contact">Contact</a>
+              <li><a href="#about-section" title="About">My Story</a></li>
+              <li <% if (Title==='Portfolio' ) { %>class="active" <% }%>>
+                  <a href="/portfolio" title="Gallery">Portfolio</a>
+              </li>
+              <li <% if (Title==='Contact' ) { %>class="active" <% }%>>
+                  <a href="/contact">Contact</a>
               </li>
             </ul>
           </div>
@@ -114,4 +119,4 @@
         <!-- Navigation /- -->
       </div>
     </div>
-</header>
+  </header>
