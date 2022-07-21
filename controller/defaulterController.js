@@ -1,6 +1,6 @@
 
 const indexPage = (req,res) =>{
-    let Title = "Home ";
+    let Title = "Home";
     res.render('default/index',{Title});
 
 }
