@@ -1,11 +1,15 @@
 {
   "name": "chefcherry",
   "version": "1.0.0",
-  "description": "An Online Restuarant App",
+  "description": "Chef cherry's cuisine portfolio App",
   "main": "app.js",
   "scripts": {
     "start":"node app.js",
     "dev" : "nodemon app.js"
+  },
+  "engines": {
+    "node": "16.15.0",
+    "npm": "8.8.0"
   },
   "repository": {
     "type": "git",
