@@ -3,7 +3,6 @@ const express = require('express')
 const app = express()
 const logger =require('morgan')
 const session = require('express-session')
-// const MongoStore = require('connect-mongo')
 const path = require('path')
 const connectDB = require('./config/db')
 
@@ -33,7 +32,7 @@ app.use('/', defaultRoutes)
 
 //Configure Express Session
 
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 app.listen(PORT, (req,res) =>{
     console.log(`Server Started at Port ${PORT}`)
 })
