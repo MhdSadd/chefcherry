@@ -1,15 +1,11 @@
 {
   "name": "chefcherry",
   "version": "1.0.0",
-  "description": "Chef cherry's cuisine portfolio App",
+  "description": "An Online Restuarant App",
   "main": "app.js",
   "scripts": {
-    "start":"node app.js",
-    "dev" : "nodemon app.js"
-  },
-  "engines": {
-    "node": "16.15.0",
-    "npm": "8.8.0"
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -22,12 +18,18 @@
   },
   "homepage": "https://github.com/MhdSadd/chefcherry#readme",
   "dependencies": {
+    "bcrypt": "^5.0.1",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^4.6.0",
     "dotenv": "^16.0.1",
     "ejs": "^3.1.8",
     "express": "^4.18.1",
     "express-session": "^1.17.3",
+    "js": "^0.1.0",
     "mongoose": "^6.4.5",
     "morgan": "^1.10.0",
-    "nodemon": "^2.0.19"
+    "nodemon": "^2.0.19",
+    "passport": "^0.6.0",
+    "passport-jwt": "^4.0.0"
   }
 }
