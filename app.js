@@ -3,13 +3,13 @@ const express = require("express");
 const app = express();
 const logger = require("morgan");
 const session = require("express-session");
-// const MongoStore = require('connect-mongo')
 const path = require("path");
-const connectDB = require("./config/db");
 const passport = require("passport");
 const mongoStore = require("connect-mongo");
 const flash = require("connect-flash");
+const connectDB = require("./config/db");
 
+// Set static files path
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
@@ -22,6 +22,7 @@ connectDB();
 //Morgan Init
 app.use(logger("dev"));
 
+// Init Session
 app.use(
   session({
     cookie: {
@@ -36,16 +37,18 @@ app.use(
 
 // app.use(flash);
 
+// Passport Init
 app.use(passport.initialize());
 app.use(passport.session());
+
 //Routes
 const defaultRoutes = require("./routes/default.routes");
 const adminRoutes = require("./routes/admin.routes");
 
+// Routes grouping
 app.use("/", defaultRoutes);
 app.use("/admin", adminRoutes);
 
-//Configure Express Session
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, (req, res) => {
   console.log(`Server Started at Port ${PORT}`);

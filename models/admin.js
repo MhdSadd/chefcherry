@@ -6,6 +6,10 @@ const adminSchema = new Schema({
     type: String,
     required: true,
   },
+  profileImage: {
+    type: String,
+    default: "https://twitter.com/EstherAkunekwe/header_photo",
+  },
   email: {
     type: String,
     required: true,
