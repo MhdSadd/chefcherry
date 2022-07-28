@@ -20,9 +20,6 @@ const credential = {
 
 router.get('/login', defaultController.loginPage);
 
-userna = process.env.EMAIL;
-userne = process.env.PASSWORD;
-console.log(userna, userne  )
 
 
 module.exports =router
