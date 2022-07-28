@@ -1,14 +1,16 @@
 require("dotenv").config({ path: "../.env", debug: true });
 const Administrator = require("../data/admin");
+const bcrypt = require("bcryptjs");
 const connectDB = require("../config/db");
 const { Admin } = require("../models/admin");
 
 connectDB();
 
 const admin = new Admin({
-  fullName: "Chef Cherry",
-  email: "chefcherry@gmail.com",
+  fullName: "Admin chef",
+  email: "admin@gmail.com",
   password: "chef1234cherry",
+  isAdmin: true,
 });
 
 //===================== Hash the password and seeding to database======================

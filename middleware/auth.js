@@ -2,14 +2,25 @@ const adminData = require("../data/admin");
 
 const auth = (req, res, next) => {
   console.log("Route's Working");
-  if (req.isAuthenticated()) {
-    console.log("its okay");
-    res.send(req.flash({ message: `You have be redirected Succefully` }));
-    next();
+  // if(!req.cookie.token) 
+  //   return res.send("You're not authorized");
+  
+  if(req.user.isAdmin) {
+    return next();
   } else {
-    res.redirect("/");
-    console.log("login pls");
+    return res.status(404).redirect("/");
+
   }
+
 };
 
-module.exports = auth;
+const addAuthToken = (req, res, next) => {
+  const token = req.cookies.token;
+  if(!token)
+  return res.redirect("/login");
+  
+  req.headers.authorization = token; 
+  return next();
+}
+
+module.exports = {auth, addAuthToken};
