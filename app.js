@@ -3,18 +3,27 @@ const express = require("express");
 const app = express();
 const logger = require("morgan");
 const session = require("express-session");
+const Admin = require("./models/admin")
 const path = require("path");
 const passport = require("passport");
 const mongoStore = require("connect-mongo");
 const flash = require("connect-flash");
 const connectDB = require("./config/db");
+const bodyparser = require("body-parser")
+const cookieParser = require("cookie-parser");
+
+
+require("./config/passportJwt");
+
+app.use(bodyparser.json());
+app.use(bodyparser.urlencoded({extended: true}))
 
 // Set static files path
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
 // path init for static files
-app.use(express.static(path.join(__dirname, "/public/")));
+app.use(express.static(path.join(__dirname, "public")));
 
 //Connect to Mongo DB
 connectDB();
@@ -23,10 +32,11 @@ connectDB();
 app.use(logger("dev"));
 
 // Init Session
+app.use(cookieParser());
 app.use(
   session({
     cookie: {
-      maxAge: 100 * 60 * 1000,
+      maxAge: 100 * 60 * 10000,
     },
     secret: process.env.SESSION_SECRET,
     resave: false,
@@ -35,11 +45,9 @@ app.use(
   })
 );
 
-// app.use(flash);
 
 // Passport Init
 app.use(passport.initialize());
-app.use(passport.session());
 
 //Routes
 const defaultRoutes = require("./routes/default.routes");

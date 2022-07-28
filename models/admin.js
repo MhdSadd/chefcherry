@@ -19,6 +19,10 @@ const adminSchema = new Schema({
     type: String,
     required: true,
   },
+  isAdmin: {
+    type: Boolean,
+    default: false
+  }
 });
 
 module.exports = { Admin: mongoose.model("admin", adminSchema) };

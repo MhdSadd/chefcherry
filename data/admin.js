@@ -1,19 +1,19 @@
-// const bcrypt =require("bcryptjs")
-// const Administrator = [
-//     {
-//         name: "Okpanachi Emmanuel",
-//         phone: 08164482158,
-//         password: bcrypt.hashSync("0987",10),
-//         isVerified: true
-//     },
-// ];
-// module.exports = Administrator;
-
-const adminData = [
+const bcrypt = require("bcryptjs");
+const Administrator = [
   {
-    username: "Admin",
-    password: "1234Admin",
+    name: "Okpanachi Emmanuel",
+    phone: 08164482158,
+    password: bcrypt.hashSync("0987", 10),
+    isVerified: true,
   },
 ];
+module.exports = Administrator;
 
-module.exports = adminData;
+// const adminData = [
+//   {
+//     username: "Admin",
+//     password: "1234Admin",
+//   },
+// ];
+
+// module.exports = adminData;
